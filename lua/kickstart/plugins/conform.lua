@@ -4,12 +4,12 @@ return {
     lazy = false,
     keys = {
       {
-        '<leader>f',
+        '<leader>fb',
         function()
           require('conform').format { async = true, lsp_fallback = true }
         end,
         mode = '',
-        desc = '[F]ormat buffer',
+        desc = '[F]ormat [B]uffer',
       },
     },
     opts = {
@@ -26,8 +26,10 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        c = { 'clang-format' },
+        cpp = { 'clang-format' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
+        python = { 'isort', 'black' },
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
