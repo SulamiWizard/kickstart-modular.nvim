@@ -91,6 +91,9 @@ vim.g.loaded_netrwPlugin = 1
 -- 24-bit colour
 vim.opt.termguicolors = true
 
+-- tiny-inline-diagnostic
+vim.diagnostic.config { virtual_text = false }
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
