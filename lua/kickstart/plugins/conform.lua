@@ -29,7 +29,7 @@ return {
         c = { 'clang-format' },
         cpp = { 'clang-format' },
         -- Conform can also run multiple formatters sequentially
-        python = { 'isort', 'autopep8' },
+        python = { 'ruff_fix', 'ruff_format', 'ruff_organize_imports' },
         javascript = { 'prettier' },
       },
       formatters = {
