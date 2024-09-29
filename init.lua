@@ -30,15 +30,16 @@ require 'lazy-bootstrap'
 require 'lazy-plugins'
 
 -- Set 4 space indent for js and ts files
-vim.api.nvim_create_augroup('javascript', { clear = true })
+vim.api.nvim_create_augroup('custom_js_ts_settings', { clear = true })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'js' },
-  group = 'javascript',
+  pattern = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'tsx', 'jsx' },
+  group = 'custom_js_ts_settings',
   callback = function()
-    vim.opt_local.shiftwidth = 4
-    vim.opt_local.softtabstop = -1
-    vim.opt_local.expandtab = true
+    vim.bo.shiftwidth = 4
+    vim.bo.tabstop = 4
+    vim.bo.softtabstop = 4
+    vim.bo.expandtab = true -- Use spaces instead of tabs
   end,
 })
 
@@ -46,7 +47,8 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'c', 'cpp' },
   callback = function()
     vim.bo.shiftwidth = 4
-    vim.opt_local.softtabstop = -1
+    vim.bo.tabstop = 4
+    vim.bo.softtabstop = 4 -- Make softtabstop align with shiftwidth
     vim.bo.expandtab = true -- Use spaces instead of tabs
   end,
 })

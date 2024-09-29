@@ -31,6 +31,7 @@ return {
         -- Conform can also run multiple formatters sequentially
         python = { 'ruff_fix', 'ruff_format', 'ruff_organize_imports' },
         javascript = { 'prettier' },
+        typescript = { 'prettierd' },
       },
       formatters = {
         prettier = {
